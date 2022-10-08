@@ -1,7 +1,7 @@
 let filterStock = []
 let playerData = [];
-let noOfStocks = 0
-let marketWatch = document.getElementById("sort")
+let noOfStocks = document.getElementById('stocks');
+let marketWatch = document.getElementById("sort");
 const searchBox = document.querySelector('#search-box');
 searchBox.addEventListener("change", clickHandler)
 
@@ -36,8 +36,8 @@ async function getplayerData() {
     // playerData = res.data
     filterStock = playerData
   }
-  // console.log();
-  filterStock.map(createPlayerCard) 
+  console.log(filterStock);
+  filterStock.map(createPlayerCard)
 }
 getcountryData()
 
@@ -97,26 +97,26 @@ function createPlayerCard(e) {
   playerCardContainer[0].appendChild(playerCard)
 }
 
-function clickHandler(e) {
-  console.log(searchBox.value, searchBox);
-  filterStock = playerData.filter((e) => { return e.name.search(searchBox.value) != -1 })
-  console.log(filterStock);
+function deleteChild() {
   var child = playerCardContainer[0].lastElementChild;
   while (child) {
     playerCardContainer[0].removeChild(child);
     child = playerCardContainer[0].lastElementChild;
   }
+}
+
+function clickHandler(e) {
+  console.log(searchBox.value, searchBox);
+  filterStock = filterStock.filter((e) => { return e.name.search(searchBox.value) != -1 })
+  console.log(filterStock);
+  deleteChild()
   getplayerData()
 }
 
 cList.addEventListener('click', (e) => {
   // console.log(e.target.value, "counrty" == e.target.value);a
   console.error(e.target.value);
-  var child = playerCardContainer[0].lastElementChild;
-  while (child) {
-    playerCardContainer[0].removeChild(child);
-    child = playerCardContainer[0].lastElementChild;
-  }
+  deleteChild()
   if (e.target.value !== "counrty") {
     // console.log(e.target.value)
     // if (filterStock.length < playerData.length) {
@@ -135,8 +135,8 @@ cList.addEventListener('click', (e) => {
   }
   getplayerData()
 })
-lList.addEventListener('click', (e) => {
-})
+// lList.addEventListener('click', (e) => {
+// })
 
 
 let countryData = [];
@@ -179,14 +179,25 @@ sort.addEventListener("click", (e) => {
     filterStock.sort((a, b) => { return b.prevPrice - a.prevPrice })
   }
   // console.log(filterStock);
-  var child = playerCardContainer[0].lastElementChild;
-  while (child) {
-    playerCardContainer[0].removeChild(child);
-    child = playerCardContainer[0].lastElementChild;
-  }
+  deleteChild()
   filterStock.map((e) => { console.log(e.prevPrice, e) })
   getplayerData()
 })
 
-noOfStocks = playerData.slice(0,10) 
-console.log(noOfStocks);
+// function clickHandlerStocks(e) {
+//   console.log(noOfStocks.value, noOfStocks);
+//   filterStock = filterStock.filter((e) => { return e.name.search(noOfStocks.value) != -1 })
+//   console.log(filterStock);
+//   getplayerData()
+// }
+
+
+noOfStocks.addEventListener("click", (e) => {
+  if (e.target.value) {
+    filterStock = filterStock.slice(0, e.target.value)
+  }
+  console.log(filterStock);
+
+  deleteChild()
+  getplayerData()
+})
