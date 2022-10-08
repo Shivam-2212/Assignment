@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/sass/style.css">
+  <title>Assignment</title>
+</head>
+
+<body>
+  <div class="overlap">
+    <header class="header-section">
+      <div class="header-logo">
+        <a href="/sass/index-sass.html">
+          <img src="./assets/img/logo-name.svg" alt="header-logo">
+        </a>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="container">
+        <section class="market-place-section">
+          <div class="market-place-content">
+            <div class="market-place-title">
+              StockList
+
+              <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="market-place-list" id="link">
+
+              <div class="sort">
+                <div class="sort-name">Sort </div>
+                <div class="select">
+                  <select name="sort" id="sort">
+                    <option value="Trending">Trending</option>
+                    <option value="Gainers">Gainers</option>
+                    <option value="Losers">Losers</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="search">
+                <div class="search-name"> Search Player</div>
+                <input type="text" placeholder="Serach Player Here.." id="search-box">
+              </div>
+
+              <div class="country">
+                <div id="c-name">
+                  Country
+                </div>
+                <div class="country-list">
+                  <select name="country" id="c-list">
+                    <option value="counrty">All</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="Num-stocks">
+                No. of Stocks
+                <input type="number" placeholder="No. of Stocks">
+              </div>
+
+              <div class="league">
+                <div id="l-name">
+                  League
+                </div>
+                <div class="league-list">
+                  <select name="league" id="l-list">
+                    <option value="league">All</option>
+                    <!-- <option value="league" id="ipl">IPL</option> -->
+                  </select>
+                </div>
+              </div>
+
+              <div class="franchise">
+                <div id="f-name">
+                  Franchise
+                </div>
+                <div class="franchise-list">
+                  <select name="franchise" id="f-list">
+                    <option value="franchise">All</option>
+                    <option value="franchise" id="c-franchise">CSK</option>
+                    <option value="franchise" id="c-franchise">MI</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="market-place-player-container">
+
+            <!-- <div class="market-place-player-card">
+
+              <div class="market-place-player-img">
+              </div>
+
+              <div class="market-place-player-details">
+                <span class="market-place-player-name"> A. Markram </span>
+                <span class="market-place-player-skill">IND・BLR </span>
+                <span class="market-place-player-country">IND</span>
+              </div>
+              <div class="market-place-player-organization">
+                <span class="market-place-player-league">IPL</span>
+                <span class="market-place-player-franchise">CSK</span>
+              </div>
+              <div class="market-place-player-worth">
+                <span class="market-place-player-price">₹98.50 </span>
+                <span class="market-place-player-share">+4.00% </span>
+              </div>
+            </div> -->
+
+
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+<script src="./hamburger.js"></script>
+<script src="./playerData.js"></script>
+<!-- <script src="./country.js"></script> -->
+<script src="./franchise.js"></script>
+<script src="./league.js"></script>
+
+</html>
